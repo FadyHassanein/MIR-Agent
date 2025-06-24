@@ -1,6 +1,7 @@
 import httpx
 from pydantic import BaseModel
-from config import settings
+from backend.config import settings
+
 
 class OutboundMessage(BaseModel):
     to: str
