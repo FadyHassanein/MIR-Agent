@@ -1,8 +1,8 @@
 # workers/chat_logger.py
 import asyncio
 from pymongo import InsertOne
-from config import chat_logs_collection
-from workers.queues import chat_log_queue
+from backend.config import chat_logs_collection
+from backend.workers.queues import chat_log_queue
 
 def start_chat_logger():
     async def worker():
