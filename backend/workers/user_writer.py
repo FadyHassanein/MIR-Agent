@@ -1,8 +1,8 @@
 # workers/user_writer.py
 import asyncio
 from pymongo import UpdateOne
-from config import users_collection
-from workers.queues import user_upsert_queue
+from backend.config import users_collection
+from backend.workers.queues import user_upsert_queue
 
 def start_user_writer():
     async def worker():
