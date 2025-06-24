@@ -2,11 +2,12 @@ import asyncio
 from fastapi import FastAPI
 from contextlib import asynccontextmanager
 
-from config import mongo_client
-from routes.webhook import router as webhook_router
-from workers.user_writer import start_user_writer
-from workers.chat_logger import start_chat_logger
-from workers.session_pruner import start_session_pruner
+from backend.config import mongo_client
+
+from backend.routes.webhook import router as webhook_router
+from backend.workers.user_writer import start_user_writer
+from backend.workers.chat_logger import start_chat_logger
+from backend.workers.session_pruner import start_session_pruner
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
