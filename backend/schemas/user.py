@@ -1,7 +1,7 @@
 # schemas/user.py
 from datetime import datetime, timezone
 from bson import ObjectId
-from config import users_collection
+from backend.config import users_collection
 
 def upsert_user(external_id: str, name: str = None) -> ObjectId:
     now = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
