@@ -1,7 +1,7 @@
 from pydantic import BaseModel, Field
 from bson import ObjectId
 from typing import Optional
-from utils import now_utc_str
+from backend.utils import now_utc_str
 # --- User model for the `users` collection ---
 class User(BaseModel):
     id:         ObjectId = Field(alias="_id")
