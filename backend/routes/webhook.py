@@ -9,15 +9,18 @@ Key additions vs. previous version:
 from fastapi import APIRouter, Request, Response
 import asyncio
 import traceback
-from workers.queues import user_upsert_queue, chat_log_queue
-from sessions.manager import session_mgr
-from utils import now_utc_str
-from config import settings
-from integrations.whatsapp import send_text_message
-from agents.openai_agent_v2 import MirAgent
-from agents.summary_chain import summarize 
-from schemas.summary import load_session_summary
-from langchain_core.messages import HumanMessage,SystemMessage
+
+from backend.workers.queues import user_upsert_queue, chat_log_queue
+from backend.sessions.manager import session_mgr
+from backend.utils import now_utc_str
+from backend.config import settings
+from backend.integrations.whatsapp import send_text_message
+from backend.agents.openai_agent_v2 import MirAgent
+from backend.agents.summary_chain import summarize 
+from backend.schemas.summary import load_session_summary
+
+from langchain_core.messages import HumanMessage, SystemMessage
+
 
 
 
