@@ -1,16 +1,10 @@
 import httpx
-from pydantic import BaseModel
 from backend.config import settings
 
-
-class OutboundMessage(BaseModel):
-    to: str
-    body: str
-
 async def send_text_message(to_number: str, body: str) -> dict:
-    url = f"https://graph.facebook.com/v22.0/{settings.whatsapp_phone_number_id}/messages"
+    url = f"https://graph.facebook.com/v22.0/{settings.WHATSAPP_PHONE_NUMBER_ID}/messages"
     headers = {
-        "Authorization": f"Bearer {settings.whatsapp_token}",
+        "Authorization": f"Bearer {settings.WHATSAPP_TOKEN}",
         "Content-Type": "application/json",
     }
     payload = {
@@ -19,10 +13,13 @@ async def send_text_message(to_number: str, body: str) -> dict:
         "type": "text",
         "text": {"body": body},
     }
+
+    print(f"URL: {url}")
+    print(f"Payload: {payload}")
+
     async with httpx.AsyncClient() as client:
         resp = await client.post(url, headers=headers, json=payload)
+        print(f"Status: {resp.status_code}")
+        print(f"Response: {resp.text}")
         resp.raise_for_status()
         return resp.json()
-
-
-
