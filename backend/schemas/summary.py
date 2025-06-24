@@ -6,8 +6,8 @@ self‑contained: if Mongo is unavailable (e.g. during tests), they simply retur
 `None` or no‑op.
 """
 
-from utils import now_utc_str
-from config import db
+from backend.utils import now_utc_str
+from backend.config import db
 
 
 async def load_session_summary(user_id: str):
