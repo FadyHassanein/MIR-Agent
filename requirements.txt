@@ -4,6 +4,8 @@ langchain-community==0.3.21
 langchain-tavily==0.2.4
 langchain-groq==0.3.4
 tavily-python==0.4.0
+langgraph==0.4.8
+
 
 # === Web server ===
 fastapi==0.115.12
