@@ -2,11 +2,12 @@ import httpx
 from backend.config import settings
 
 async def send_text_message(to_number: str, body: str) -> dict:
-    url = f"https://graph.facebook.com/v22.0/{settings.WHATSAPP_PHONE_NUMBER_ID}/messages"
+    url = f"https://graph.facebook.com/v22.0/{settings.whatsapp_phone_number_id}/messages"
     headers = {
-        "Authorization": f"Bearer {settings.WHATSAPP_TOKEN}",
-        "Content-Type": "application/json",
-    }
+    "Authorization": f"Bearer {settings.whatsapp_token}",
+    "Content-Type": "application/json",
+}
+
     payload = {
         "messaging_product": "whatsapp",
         "to": to_number,
