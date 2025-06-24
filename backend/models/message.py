@@ -2,7 +2,7 @@
 from pydantic import BaseModel, Field
 from bson import ObjectId
 from typing import Optional
-from utils import now_utc_str
+from backend.utils import now_utc_str
 
 # --- ChatLog model for the `chat_logs` collection ---
 class ChatLog(BaseModel):
