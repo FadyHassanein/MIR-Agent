@@ -1,7 +1,7 @@
 
 from typing import Dict, Any, Callable, Awaitable
 from datetime import datetime, timezone, timedelta
-from agents.openai_agent_v2 import MirAgent
+from backend.agents.openai_agent_v2 import MirAgent
 from langchain_community.chat_message_histories import ChatMessageHistory
 
 # ---------------------------------------------------------------------------
